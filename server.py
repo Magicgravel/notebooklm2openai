@@ -3,12 +3,21 @@ import time
 import uuid
 from typing import List, Optional, Dict, Any
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
 from notebooklm import NotebookLMClient
 
 app = FastAPI(title="NotebookLM OpenAI Compatible API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # --- OpenAI API 模型定义 ---
 

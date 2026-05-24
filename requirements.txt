@@ -1,4 +1,5 @@
 notebooklm-py
+playwright
 fastapi
 uvicorn
 pydantic
