@@ -1,5 +1,6 @@
-notebooklm-py
+notebooklm-py[browser]
 playwright
 fastapi
 uvicorn
 pydantic
+httpx[socks]

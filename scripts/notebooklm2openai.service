@@ -1,0 +1,18 @@
+[Unit]
+Description=NotebookLM to OpenAI API Service
+After=network.target
+
+[Service]
+Type=simple
+User=unitree
+WorkingDirectory=path/to/notebooklm2openai
+Environment="PATH=/usr/local/bin:/usr/bin:/bin"
+ExecStart=/bin/bash scripts/launch.sh
+Restart=on-failure
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=notebooklm2openai
+
+[Install]
+WantedBy=multi-user.target

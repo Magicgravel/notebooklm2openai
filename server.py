@@ -44,7 +44,7 @@ async def get_notebooklm_response(prompt: str) -> str:
         raise Exception("Environment variable 'notebook_id' is not set.")
         
     try:
-        async with await NotebookLMClient.from_storage() as client:
+        async with NotebookLMClient.from_storage() as client:
             result = await client.chat.ask(NOTEBOOK_ID, prompt)
             return result.answer
     except Exception as e:
@@ -96,4 +96,4 @@ async def chat_completions(req: ChatCompletionRequest):
 if __name__ == "__main__":
     import uvicorn
     # 运行服务器: python server.py
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=9000)
